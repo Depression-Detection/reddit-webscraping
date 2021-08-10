@@ -7,12 +7,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
-driver.get("https://www.python.org")
+driver.get("https://www.reddit.com/x")
 print(driver.title)
-search_bar = driver.find_element_by_name("q")
-search_bar.clear()
-search_bar.send_keys("getting started with python")
-search_bar.send_keys(Keys.RETURN)
 time.sleep(3)
 print(driver.current_url)
-driver.close()
+# driver.close()
