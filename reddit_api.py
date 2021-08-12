@@ -1,3 +1,4 @@
+import pandas as pd
 import praw
 
 r = praw.Reddit(
@@ -7,5 +8,13 @@ r = praw.Reddit(
 )
 cmts = list(r.redditor('Chaos_moon0').comments.new(limit=None))
 print(cmts)
-print("First one in list body:")
-print(r.comment(id='h8f7snk').body)
+
+
+# df = pd.read_csv("users.csv", header=None) 
+
+# subreddit_data = []
+# for username in df[0]:
+#     cmts = list(r.redditor('Chaos_moon0').comments.new(limit=None))
+#     print(cmts)
+#     print("First one in list body:")
+#     print(r.comment(id='h8f7snk').body)
