@@ -1,4 +1,4 @@
 # reddit-webscraping
 ### Dependencies
-```` pip install selenium ```` <br/>
-```` pip install webdriver-manager ````
+```` pip install pandas ```` <br/>
+```` pip install datetime ````
