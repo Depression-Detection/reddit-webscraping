@@ -19,3 +19,5 @@ with open('users.csv') as f:
 with open("users.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerows(list)
+
+    
