@@ -1,4 +1,5 @@
-from re import sub
+# coding: utf-8
+
 import pandas as pd
 import praw
 from datetime import datetime
@@ -10,12 +11,9 @@ r = praw.Reddit(
 )
 
 df = pd.read_csv("data/users.csv", header=None) 
-
-comment_count = 0
-user_count = 0
 new_col = []
+
 for username in df[0]:
-    user_count+=1
     subreddit_data = []
     comment_list = list(r.redditor(username).comments.new(limit=None))
     for comment in comment_list:
@@ -29,14 +27,16 @@ for username in df[0]:
             if int(month) == 7:
                 if int(day) >= 12:
                     subreddit_data.append(r.comment(id=comment.id).body)
-                    comment_count += 1
+                else:
+                    break
             elif int(month) == 8:
                 if int(day) <= 12:
                     subreddit_data.append(r.comment(id=comment.id).body)
-                    comment_count += 1
+                else:
+                    break
+        else:
+            break
     print(subreddit_data)
-    print(comment_count)
-    print(user_count)
     new_col.append(subreddit_data)
 
 df['new'] = new_col
