@@ -1,4 +1,7 @@
-# reddit-webscraping
+# Reddit Webscraping
+## Overview
+This respository contains the code used to formulate the datasets that trained our machine learning model.
+
 ### Dependencies
 ```` pip install pandas ```` <br/>
 ```` pip install datetime ````
